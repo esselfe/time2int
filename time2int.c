@@ -7,7 +7,7 @@
 #include <sys/sysinfo.h>
 #include <getopt.h>
 
-char *time2int_version = "0.0.2";
+char *time2int_version = "0.0.3";
 
 const struct option long_options[] = {
 	{"help", no_argument, NULL, 'h'},
@@ -46,7 +46,7 @@ void Time2CTime (void) {
 
 void Time2CTimeFull (void) {
 	gettimeofday (&tv0, NULL);
-	printf ("%ld.%09ld\n", tv0.tv_sec, tv0.tv_usec);
+	printf ("%ld.%06ld\n", tv0.tv_sec, tv0.tv_usec);
 }
 
 void Time2DaySeconds (void) {
