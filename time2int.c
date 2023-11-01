@@ -7,7 +7,7 @@
 #include <sys/sysinfo.h>
 #include <getopt.h>
 
-char *time2int_version = "0.0.3";
+char *time2int_version = "0.0.4";
 
 const struct option long_options[] = {
 	{"help", no_argument, NULL, 'h'},
@@ -32,9 +32,9 @@ void HelpShow (void) {
 "  -h, --help                Show this help message and exit\n");
 }
 
-void CTime2Time(unsigned int time) {
-	time_t t0 = (time_t)time;
-	struct tm *tm0 = localtime(&t0);
+void CTime2Time(unsigned int time2) {
+	time_t t0 = (time_t)time2;
+	struct tm *tm0 = gmtime(&t0);
 	printf("%d-%02d-%02d %02d:%02d:%02d\n", tm0->tm_year+1900, tm0->tm_mon, tm0->tm_mday,
 		tm0->tm_hour, tm0->tm_min, tm0->tm_sec);
 
